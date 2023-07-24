@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>{{ focus }}</title>
+    </head>
+    <body>
+        <h1>{{ focus }} Minimum Wage: 1968 to {% if project %} {{ year }} {% else %} 2020 {% endif %} </h1>
+            <img src="{{ url_for('fig', focus=focus, state=state, project=project) }}"
+                 alt="{{ focus }} minimum wage ">
+        <form action="/submit_projection" method="POST">
+            <p>Select which date you'd like to project to:
+                <input type="text" name="year" placeholder="yyyy">
+                <input type="submit" value="Submit"></p>
+        </form>
+
+    </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pick a State</title>
+</head>
+<body>
+    <h1>What state would you like to see data for?</h1>
+    <form action="/submit_state" method="POST">
+        Choose a State:
+        <SELECT name="state">
+            {% for s in states %}
+                {% if s == 'California': %}
+                    <OPTION value="{{s}}" selected>{{s}}</option>
+                {% else: %}
+                    <OPTION value="{{s}}">{{s}}</option>
+                {% endif %}
+            {% endfor %}
+        </SELECT>
+        <p><input type="submit" value="Submit"></p>
+    </form>
+</body>
+</html>
